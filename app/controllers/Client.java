@@ -21,7 +21,5 @@ public class Client extends Controller {
         }
 
         render(client);
-
-//        render(email, password);
     }
 }

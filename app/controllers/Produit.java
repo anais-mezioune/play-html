@@ -3,7 +3,9 @@ package controllers;
 import com.formation.exceptions.MetierException;
 import com.formation.services.ProduitService;
 import play.mvc.Controller;
+import play.mvc.With;
 
+@With(Secure.class)
 public class Produit extends Controller {
 
     public static void create() {
