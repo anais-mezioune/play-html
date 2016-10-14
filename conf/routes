@@ -6,15 +6,19 @@
 
 # Home page
 GET     /                                       Application.index
+GET     /product/{id}                           Application.produit
 
 # Client
-GET     /account/create                         Client.create
-POST    /account/create                         Client.save
+GET     /account/create                         Clients.create
+POST    /account/create                         Clients.save
 
+# Panier
+GET     /panier/ajouter/{id}                    Paniers.ajouterAuPanier
+GET     /panier                                 Paniers.afficher
 
 # Produit
-GET     /product/create                         Produit.create
-POST    /product/create                         Produit.save
+GET     /product/create                         Produits.create
+POST    /product/create                         Produits.save
 
 
 # Ignore favicon requests

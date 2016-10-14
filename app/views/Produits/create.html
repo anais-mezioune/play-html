@@ -1,0 +1,12 @@
+#{extends 'main.html'/}
+
+#{ifErrors}
+<h1>Oops…</h1>
+    #{error 'error' /}</li>
+#{/ifErrors}
+
+<form action="@{Produits.save}" method="post">
+    Nom :<input type="text" name="nom" value="${flash.nom}"/>#{error 'nom' /}<br/>
+    Prix Unitaire :<input type="number" step="any" name="prixUnitaire" value="${flash.prixUnitaire}"/>#{error 'prixUnitaire' /}<br/>
+    <input type="submit" value="Go!">
+</form>

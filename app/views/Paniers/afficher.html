@@ -1,0 +1,9 @@
+#{extends 'main.html'/}
+
+${panier.date}
+
+<ul>
+#{list items:panier.produits, as:'produitAjouteAuPanier'}
+<li>${produitAjouteAuPanier.produit.nom} : ${produitAjouteAuPanier.produit.prixUnitaire} x ${produitAjouteAuPanier.quantite} </li>
+#{/list}
+</ul>

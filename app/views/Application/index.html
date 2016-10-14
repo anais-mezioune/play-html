@@ -3,8 +3,12 @@
 
 <h1>Ecommerce</h1>
 
-<a href="@{Client.create}">Créer un client</a>
-<a href="@{Produit.create}">Créer un produit</a>
+<a href="@{Clients.create}">Créer un client</a>
+<a href="@{Produits.create}">Créer un produit</a>
 
 
-*{Lister les produits}*
+<ul>
+#{list items:produits, as:'produit'}
+    <li><a href="@{Application.produit(produit.id)}">${produit.nom}</a></li>
+#{/list}
+<ul>

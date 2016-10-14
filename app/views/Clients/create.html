@@ -1,0 +1,14 @@
+#{extends 'main.html'/}
+
+#{ifErrors}
+    <h1>Oops…</h1>
+    #{error 'error' /}</li>
+#{/ifErrors}
+
+<form action="@{Clients.create}" method="post">
+    Email :<input type="text" name="email" value="${flash.email}"/>#{error 'email' /}<br/>
+    Mot de passe :<input type="password" name="password"/>#{error 'password' /}<br/>
+    Nom :<input type="text" name="nom" value="${flash.nom}"/>#{error 'nom' /}<br/>
+    Prénom :<input type="text" name="prenom" value="${flash.prenom}"/>#{error 'prenom' /}<br/>
+    <input type="submit" value="Go!">
+</form>
