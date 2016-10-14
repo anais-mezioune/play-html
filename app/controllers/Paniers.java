@@ -1,35 +1,44 @@
 package controllers;
 
-import com.formation.exceptions.MetierException;
-import com.formation.models.Client;
-import com.formation.models.Panier;
-import com.formation.models.Produit;
-import com.formation.services.ClientService;
-import com.formation.services.PanierService;
-import com.formation.services.ProduitService;
+import models.Client;
+import models.Panier;
+import models.Produit;
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.SimpleEmail;
+import play.libs.Mail;
 import play.mvc.Controller;
 import play.mvc.With;
+import services.PanierService;
 
 @With(Secure.class)
 public class Paniers extends Controller {
 
-    public static void ajouterAuPanier(String id) {
-        Produit produit = ProduitService.getProduit(id);
+    public static void ajouterAuPanier(Long id) {
+
+        Produit produit = Produit.findById(id);
         String email = Secure.Security.connected();
-        Client client = ClientService.getClientByEmail(email);
+        Client client = Client.find("email = ?1", email).first();
         Panier panier = PanierService.getPanier(client);
-        try {
-            PanierService.ajouterProduit(panier, produit);
-            afficher();
-        } catch (MetierException e) {
-            e.printStackTrace();
-            // TODO : Traiter l'erreur
-        }
+        PanierService.ajouterProduit(panier, produit);
+        afficher();
+
+
+//        Produit produit = ProduitService.getProduit(id);
+//        String email = Secure.Security.connected();
+//        Client client = ClientService.getClientByEmail(email);
+//        Panier panier = PanierService.getPanier(client);
+//        try {
+//            PanierService.ajouterProduit(panier, produit);
+//            afficher();
+//        } catch (MetierException e) {
+//            e.printStackTrace();
+//            // TODO : Traiter l'erreur
+//        }
     }
 
     public static void afficher() {
         String email = Secure.Security.connected();
-        Client client = ClientService.getClientByEmail(email);
+        Client client = Client.find("email = ?1", email).first();
         Panier panier = PanierService.getPanier(client);
         render(panier);
     }

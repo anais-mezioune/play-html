@@ -1,6 +1,0 @@
-# You can specialize this file for each language.
-# For example, for French create a messages.fr file
-#
-
-validation.required = Ce champs est requis
-validation.email = Ceci n'est pas un email valide

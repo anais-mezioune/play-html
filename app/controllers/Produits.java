@@ -1,8 +1,6 @@
 package controllers;
 
-import com.formation.exceptions.MetierException;
-import com.formation.models.Produit;
-import com.formation.services.ProduitService;
+import models.Produit;
 import play.data.validation.Required;
 import play.data.validation.Validation;
 import play.mvc.Controller;
@@ -23,17 +21,23 @@ public class Produits extends Controller {
             create();
         }
 
-        Produit produit = null;
-        try {
-            produit = ProduitService.creerProduit(nom, prixUnitaire);
-            render(produit);
-        } catch (MetierException e) {
-            e.printStackTrace();
-            params.flash();
-            Validation.addError("error", e.getMessage());
-            validation.keep();
-            create();
-        }
+        Produit produit = new Produit();
+        produit.nom = nom;
+        produit.prixUnitaire = prixUnitaire;
+        produit.save();
+        render(produit);
+
+//        Produit produit = null;
+//        try {
+//            produit = ProduitService.creerProduit(nom, prixUnitaire);
+//            render(produit);
+//        } catch (MetierException e) {
+//            e.printStackTrace();
+//            params.flash();
+//            Validation.addError("error", e.getMessage());
+//            validation.keep();
+//            create();
+//        }
     }
 
 }

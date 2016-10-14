@@ -1,8 +1,6 @@
 package controllers;
 
-import com.formation.exceptions.MetierException;
-import com.formation.models.Client;
-import com.formation.services.ClientService;
+import models.Client;
 import play.data.validation.*;
 import play.mvc.Controller;
 
@@ -20,16 +18,24 @@ public class Clients extends Controller {
             create();
         }
 
-        Client client = null;
-        try {
-            client = ClientService.creerClient(email, password, nom, prenom);
-            render(client);
-        } catch (MetierException e) {
-            e.printStackTrace();
-            params.flash();
-            Validation.addError("error", e.getMessage());
-            validation.keep();
-            create();
-        }
+        Client client = new Client();
+        client.email = email;
+        client.motDePasse = password;
+        client.nom = nom;
+        client.prenom = prenom;
+        client.save();
+        render(client);
+
+//        Client client = null;
+//        try {
+//            client = ClientService.creerClient(email, password, nom, prenom);
+//            render(client);
+//        } catch (MetierException e) {
+//            e.printStackTrace();
+//            params.flash();
+//            Validation.addError("error", e.getMessage());
+//            validation.keep();
+//            create();
+//        }
     }
 }

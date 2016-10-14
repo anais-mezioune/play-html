@@ -1,0 +1,7 @@
+
+
+validation.required = Ce champs est requis
+validation.email = Ceci n'est pas un email valide
+
+title.site = Commerce Electronique
+link.client.create = Créer un client

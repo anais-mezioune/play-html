@@ -3,4 +3,3 @@
 require:
     - play
     - play -> secure
-    - com.formation -> ecommerce-core 2.1-SNAPSHOT

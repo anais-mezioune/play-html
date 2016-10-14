@@ -4,6 +4,15 @@
 
 *       /                                       module:secure
 
+# API
+GET     /api/produits.{format}                      api.Api.produits
+
+
+# Produit
+GET     /product/create                         Produits.create
+POST    /product/create                         Produits.save
+
+
 # Home page
 GET     /                                       Application.index
 GET     /product/{id}                           Application.produit
@@ -15,10 +24,6 @@ POST    /account/create                         Clients.save
 # Panier
 GET     /panier/ajouter/{id}                    Paniers.ajouterAuPanier
 GET     /panier                                 Paniers.afficher
-
-# Produit
-GET     /product/create                         Produits.create
-POST    /product/create                         Produits.save
 
 
 # Ignore favicon requests

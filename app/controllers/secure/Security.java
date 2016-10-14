@@ -1,14 +1,17 @@
 package controllers.secure;
 
-import com.formation.models.Client;
-import com.formation.services.ClientService;
 import controllers.Secure;
+import models.Client;
+import play.Logger;
 
 public class Security extends Secure.Security {
 
     static boolean authenticate(String username, String password) {
 
-        Client client = ClientService.getClientByEmail(username);
+        Logger.debug("tentative de connexion de " + username);
+
+        Client client = Client.find("email = ?1", username).first();
+//        Client client = ClientService.getClientByEmail(username);
         if (client != null && client.motDePasse.equals(password)) {
             return true;
         }
