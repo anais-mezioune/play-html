@@ -1,0 +1,19 @@
+#{extends 'main.html'/}
+
+votre email : ${client.email} <br/>
+
+#{if client.motDePasse.isEmpty()}
+<strong>Mot de passe vide</strong>
+#{/if}
+
+#{elseif client.motDePasse != null && client.motDePasse == "test"}
+<span>TEST</span>
+#{/elseif}
+
+#{else }
+<em>votre mdp : ${client.motDePasse}</em>
+#{/else}
+
+#{list items:client.motDePasse.toCharArray(), as:'caractere'}
+<h2>${caractere}</h2>
+#{/list}
