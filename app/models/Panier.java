@@ -20,5 +20,13 @@ public class Panier extends Model {
 
     public LocalDateTime date;
 
+    public Float getMontant() {
+        Float montant = 0f;
+        for (ProduitAjouteAuPanier produit : produits) {
+            montant += (produit.produit.prixUnitaire * produit.quantite);
+        }
+        return montant;
+    }
+
 }
 

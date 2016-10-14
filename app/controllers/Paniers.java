@@ -19,7 +19,11 @@ public class Paniers extends Controller {
         String email = Secure.Security.connected();
         Client client = Client.find("email = ?1", email).first();
         Panier panier = PanierService.getPanier(client);
+
+        // Travail
         PanierService.ajouterProduit(panier, produit);
+
+        // Ou est ce qu'on va quand on a fini
         afficher();
 
 

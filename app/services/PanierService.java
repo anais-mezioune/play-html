@@ -28,8 +28,15 @@ public class PanierService {
     }
 
     public static void ajouterProduit(Panier panier, Produit produit) {
-        ProduitAjouteAuPanier produitAjouteAuPanier = new ProduitAjouteAuPanier(produit);
-        produitAjouteAuPanier.panier = panier;
+        ProduitAjouteAuPanier produitAjouteAuPanier = ProduitAjouteAuPanier.find("panier.id = ?1 and produit.id=?2",
+                panier.id, produit.id).first();
+        if (produitAjouteAuPanier == null) {
+            produitAjouteAuPanier = new ProduitAjouteAuPanier(produit);
+            produitAjouteAuPanier.panier = panier;
+        } else {
+            produitAjouteAuPanier.quantite++;
+        }
+
         produitAjouteAuPanier.save();
     }
 }

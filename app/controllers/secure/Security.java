@@ -1,5 +1,6 @@
 package controllers.secure;
 
+import controllers.Application;
 import controllers.Secure;
 import models.Client;
 import play.Logger;
@@ -16,6 +17,18 @@ public class Security extends Secure.Security {
             return true;
         }
         return false;
+    }
+
+    public static String connected() {
+        return session.get("username");
+    }
+
+    public static boolean isConnected() {
+        return session.contains("username");
+    }
+
+    static void onDisconnected() {
+        Application.index();
     }
 
 }

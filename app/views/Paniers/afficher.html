@@ -1,9 +1,13 @@
 #{extends 'main.html'/}
 
-${panier.date}
+${panier.date.format("dd/MM/yyyy")}
 
 <ul>
 #{list items:panier.produits, as:'produitAjouteAuPanier'}
-<li>${produitAjouteAuPanier.produit.nom} : ${produitAjouteAuPanier.produit.prixUnitaire} x ${produitAjouteAuPanier.quantite} </li>
+<li>${produitAjouteAuPanier.produit.nom} : ${produitAjouteAuPanier.produit.prixUnitaire.formatCurrency('EUR').raw()} x ${produitAjouteAuPanier.quantite} </li>
 #{/list}
 </ul>
+
+Motant : ${panier.getMontant().formatCurrency('EUR').raw()}<br>
+
+<a href="@{Application.index}">Retour vers l'accueil</a>

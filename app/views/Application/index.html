@@ -6,6 +6,12 @@
 <a href="@{Clients.create}">&{'link.client.create'}</a>
 <a href="@{Produits.create}">Créer un produit</a>
 
+<a href="@{Paniers.afficher}">Mon Panier</a>
+
+#{if controllers.secure.Security.isConnected()}
+<a href="@{Secure.logout}">Se déconnecter</a>
+#{/if}
+
 
 <ul>
 #{list items:produits, as:'produit'}
