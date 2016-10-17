@@ -1,6 +1,6 @@
 #{extends 'main.html'/}
 
-${panier.date.format("dd/MM/yyyy")}
+*{${panier.date.format("dd/MM/yyyy")}}*
 
 <ul>
 #{list items:panier.produits, as:'produitAjouteAuPanier'}
