@@ -1,11 +1,9 @@
 package models;
 
+import org.hibernate.annotations.Type;
 import play.db.jpa.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -18,6 +16,7 @@ public class Panier extends Model {
     @OneToMany(mappedBy = "panier")
     public List<ProduitAjouteAuPanier> produits;
 
+    @Type(type="models.hibernate.LocalDateTimeUserType")
     public LocalDateTime date;
 
     public Float getMontant() {

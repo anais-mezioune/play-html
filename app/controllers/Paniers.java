@@ -3,9 +3,6 @@ package controllers;
 import models.Client;
 import models.Panier;
 import models.Produit;
-import org.apache.commons.mail.EmailException;
-import org.apache.commons.mail.SimpleEmail;
-import play.libs.Mail;
 import play.mvc.Controller;
 import play.mvc.With;
 import services.PanierService;
@@ -44,6 +41,7 @@ public class Paniers extends Controller {
         String email = Secure.Security.connected();
         Client client = Client.find("email = ?1", email).first();
         Panier panier = PanierService.getPanier(client);
+
         render(panier);
     }
 
