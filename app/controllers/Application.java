@@ -19,4 +19,8 @@ public class Application extends Controller {
         render(produit);
     }
 
+    public static void presentation(){
+        render();
+    }
+
 }
