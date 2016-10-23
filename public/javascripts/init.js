@@ -15,5 +15,5 @@ var $document, $window, $body;
             var $this = $(this);
             $this.css({'height' : $this.parents('.content-item').height() + "px"});
         });
-    }
+    } 
 })(jQuery);

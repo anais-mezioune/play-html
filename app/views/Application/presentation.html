@@ -52,7 +52,8 @@
         <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
 
         <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/stylesheets.css'}">
-
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/stylesheets992.css'}">
+		
         <link rel="apple-touch-icon" sizes="57x57" href="@{'/public/images/apple-touch-icon-57x57.png'}">
         <link rel="apple-touch-icon" sizes="60x60" href="@{'/public/images/apple-touch-icon-60x60.png'}">
         <link rel="apple-touch-icon" sizes="72x72" href="@{'/public/images/apple-touch-icon-72x72.png'}">
@@ -88,20 +89,20 @@
 
         <div id="page-content" itemscope itemtype="http://schema.org/WebPage">
             <nav id="breadcrumb">
-            <meta itemprop="url" content="http://my-site.com/about-us">
-            <div class="container">
-                <ol class="list-unstyled" id="breadcrumb-list" itemscope itemtype="http://schema.org/BreadcrumbList">
-                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                        <a class="breadcrumb-link" href="http://my-site.com/" itemprop="item"><span itemprop="name">Home</span></a>
-                        <meta itemprop="position" content="1" />
-                    </li>
-                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                        <a class="breadcrumb-link" href="http://my-site.com/about-us" target="_blank" itemprop="item"><span itemprop="name">About us</span></a>
-                        <meta itemprop="position" content="2" />
-                    </li>
-                </ol>
-            </div>
-        </nav>
+	            <meta itemprop="url" content="http://my-site.com/about-us">
+	            <div class="container">
+	                <ol class="list-unstyled" id="breadcrumb-list" itemscope itemtype="http://schema.org/BreadcrumbList">
+	                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+	                        <a class="breadcrumb-link" href="http://my-site.com/" itemprop="item"><span itemprop="name">Home</span></a>
+	                        <meta itemprop="position" content="1" />
+	                    </li>
+	                    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+	                        <a class="breadcrumb-link" href="http://my-site.com/about-us" target="_blank" itemprop="item"><span itemprop="name">About us</span></a>
+	                        <meta itemprop="position" content="2" />
+	                    </li>
+	                </ol>
+	            </div>
+        	</nav>
             <main id="main" role="main" itemscope itemtype="http://schema.org/ItemPage">
                 <div class="container">
                     <article class="main-article">
@@ -154,5 +155,6 @@
         <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
         <script src="@{'/public/lib/modernizr/modernizr-2.6.1.min.js'}"></script>
         <script src="@{'/public/javascripts/init.js'}"></script>
+        <script src="@{'/public/javascripts/outils.js'}"></script>
     </body>
 </html>
