@@ -1,7 +1,0 @@
-#{extends 'main.html' /}
-
-<h2>${produit.nom}</h2>
-<span>${produit.prixUnitaire.formatCurrency('EUR').raw()}</span>
-
-<a href="@{Paniers.ajouterAuPanier(produit.id)}">Ajouter au panier</a>
-<a href="@{Application.index}">Retour vers l'accueil</a>

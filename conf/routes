@@ -9,6 +9,9 @@ GET     /api/produits.{format}                  api.Api.produits
 
 
 # Produit
+GET     /produit	                          	Produit.produit
+
+# Produits
 GET     /product/create                         Produits.create
 POST    /product/create                         Produits.save
 
