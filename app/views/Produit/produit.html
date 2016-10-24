@@ -75,16 +75,16 @@
 <script src="lib/css-mediaqueries/css3-mediaqueries.js" type="text/javascript" charset="utf-8"></script>
 <![endif]-->
 
-<header id="header" class="clearfix" role="banner">
-    <a id="logo" href="@{Application.index()}" title="my website, my main activity...">
-        <span class="img company-logo" alt="Logo of my company"></span>
+<header id="header" class="clearfix row" role="banner">
+    <a class="col-xs-3" id="logo" href="@{Application.index()}" title="Antre Manuel'Art">
+        <img class="img company-logo" alt="Antre Manuel'Art" src="@{'/public/images/logo.jpg'}" />
     </a>
     <button id="menu-btn" class="nav-btn">
         <span class="bar"></span>
         <span class="bar"></span>
         <span class="bar"></span>
     </button>
-    <nav id="main-nav">
+    <nav class="col-xs-8" id="main-nav">
         <ul id="main-nav-list" class="list-unstyled">
             <li class="main-nav-item"><a class="main-nav-link" href="#" title="Home page">Home</a></li>
             <li class="main-nav-item active"><a class="main-nav-link" href="#" title="About us">About us</a></li>
@@ -121,27 +121,27 @@
         <div class="container">
 			<article class="panel panel-primary">
                 <section class="panel-heading">
-                	<h1 class="panel-title">Page produit</h1>
+                	<h1 class="panel-title">Jeu de quilles pour enfants</h1>
                 </section>
                 <section class="panel-body row">
                 	<section id="images" class="col-xs-4">
                 		<figure>
-                			<img id="image-principale" src="@{'/public/images/tortue.jpg'}" />
+                			<img id="image-principale" src="@{'/public/images/Produits/1/image-principale.jpg'}" />
                 			<figcaption>
                 				<ul class="row" id="miniatures">
                 					<li class="miniature col-xs-4">
                 						<a class="thumbnail" href="#">
-                							<img src="@{'/public/images/tortue.jpg'}" />
+                							<img src="@{'/public/images/Produits/1/image-1.jpg'}" />
                 						</a>
                 					</li>
                 					<li class="miniature col-xs-4">
                 						<a class="thumbnail" href="#">
-                							<img src="@{'/public/images/tortue.jpg'}" />
+                							<img src="@{'/public/images/Produits/1/image-2.jpg'}" />
                 						</a>
                 					</li>
                 					<li class="miniature col-xs-4">
                 						<a class="thumbnail" href="#">
-                							<img src="@{'/public/images/tortue.jpg'}" />
+                							<img src="@{'/public/images/Produits/1/image-4.jpg'}" />
                 						</a>
                 					</li>
                 				</ul>
@@ -151,16 +151,22 @@
                 		
                 	</section>
                 	<section id="description" class="col-xs-8">
-                		<p>
-	                		ed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, 
-	                		eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam 
-	                		voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem 
-	                		sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-                		</p>
+                		<article>
+                			<section id="description-produit">
+                				<h2 id="titre-produit">Jeu de quilles pour enfants</h2>
+	                			<p>Jeu de six quilles et sa balle en tissus pour enfant en bas âge.</p>
+	                			<section id="btn-acheter">
+	                				<a href="#" class="btn btn-primary modal-trigger">Acheter</a>
+	                				<p>Plus que 1 exemplaire en stock !</p>
+	                			</section>
+                			</section>
+                			<section id="details-produit">
+                				<h3 id="titre-details">Composition :</h3>
+                				<p>Rembourrage 100% synthétique.</p>
+	                			<p>Tissus extérieur : 100% coton.</p>
+                			</section>
+                		</article>
                 	</section>
-                	
-                	
-               		<a href="#" class="btn btn-primary modal-trigger">Main action</a>
                 </section>
             </article>
         </div>
@@ -168,37 +174,43 @@
 </div>
 <footer id="footer">
     <div id="footer-content" class="container">
-        <small>Copyright ©2016 My Site | All rights reserved</small>
+        <small>Copyright ©2016 Antre Manuel'Art | Tous droits réservés</small>
     </div>
 </footer>
 
 <div id="mask" class="close-modal-link"></div>
 <div class="modal-container">
     <header>
-        <strong>Title of the modal</strong>
+        <h2>Produit(s) ajouté(s) au panier</h2>
     </header>
     <div class="modal-body">
-        <form id="get-message-form" action="" method="post">
-            <div class="form-group">
-                <label class="control-label" for="name">Name<span class="mandatory">*</span>:</label>
-                <input id="name" class="form-control" name="name" type="text" placeholder="Name">
-                <div id="error-name" class="error">The name is mandatory</div>
-            </div>
-
-            <iframe id="signature-container" src="@{'/public/images/signature.svg'}"></iframe>
-            <div id="signatureData"></div>
-            <input id="signature-input" type="hidden" name="signature">
-            <button id="show-signature-link" type="button" class="btn btn-default">Show signature</button>
-            <button id="clear-signature-link" type="button" class="btn btn-default">Clear signature</button>
-
-            <div class="action">
-                <button id="get-message-link" class="btn btn-primary">Get infos</button>
-            </div>
-        </form>
+        <section>
+        	<h3>Jeu de quilles pour enfants</h3>
+        </section>
+        <section id="modal-main">
+        	<section id="modal-image">
+        		<figure>
+        			<img id="modal-image-principale" src="@{'/public/images/Produits/1/image-principale.jpg'}" />
+ 				</figure>
+        	</section>
+        	<section id="modal-description" class="col-xs-8">
+        		<article>
+        			<section id="modal-description-produit">
+        				<p>Jeu de six quilles et sa balle en tissus pour enfant en bas âge.</p>
+	         		</section>
+        			<section id="modal-details-produit">
+        				<h4 id="modal-titre-details">Composition :</h4>
+        				<p>Rembourrage 100% synthétique.</p>
+         			<p>Tissus extérieur : 100% coton.</p>
+        			</section>
+        		</article>
+        	</section>
+        </section>
         <div class="modal-content"></div>
     </div>
     <footer class="modal-footer">
-        <button class="close-modal-link btn btn-default">Close</button>
+    	<button id="show-signature-link" type="button" class="close-modal-link btn btn-default">Continuer mes achats</button>
+       	<button id="clear-signature-link" type="button" class="btn btn-default">Valider ma commande</button>
     </footer>
 </div>
 
@@ -206,5 +218,6 @@
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="@{'/public/javascripts/signature.js'}"></script>
 <script src="@{'/public/javascripts/init-responsive.js'}"></script>
+<script src="@{'/public/javascripts/bootstrap.js'}"></script>
 </body>
 </html>

@@ -108,21 +108,21 @@ p{
 ========================================================================== */
 
 #header{
-    height: 50px;
+    height: auto;
     background-color: #1269b0;
-    padding: 0 16px;
+    padding: 3px 16px;
 }
 
 #logo{
     float: left;
-    margin-top: 2px;
+    height: auto;
+    margin-left: 3%;
 }
 
 #main-nav{
     position: absolute;
     top: 50px;
     left: 0;
-    width: 100%;
     -webkit-box-shadow: 0px 3px 10px 1px rgba(0,0,0,0.42);
     box-shadow: 0px 3px 10px 1px rgba(0,0,0,0.42);
 }
@@ -133,10 +133,11 @@ p{
     }
     #main-nav{
         float: right;
-        top: 10px;
+        top: 66px;
         position: relative;
-        left: auto;
-        width: auto;
+        margin-right: 3%;
+        text-align: right;
+        font-size: 18px;
         box-shadow: none;
     }
 }
@@ -181,6 +182,13 @@ p{
 .company-logo{
     width: 120px;
     height: 44px;
+}
+
+@media all and (min-width: 992px){
+    .company-logo{
+        width: 100%;
+    	height: auto;
+    }
 }
 
 .bar{
@@ -288,6 +296,88 @@ p{
     flex: 1;
 }
 
+.panel-primary > .panel-heading{
+	color: #fff;
+    background-color: #c1ab93;
+    border-color: #c1ab93;	
+}
+
+#images{
+	height: 100%;
+}
+
+#image-principale{
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+#miniatures{
+	list-style-type: none;
+}
+
+#description{
+	min-height: 310px;	
+}
+
+#description article{
+	height: 100%;	
+}
+
+#description-produit{
+	width: 100%;
+}
+
+#titre-produit{
+	margin: 0 0 15px 0;
+	padding: 0;
+}
+
+#description-produit p{
+	margin: 0 0 10px 0;
+	font-size: 13px;
+}
+
+#details-produit{
+	position: absolute;
+	bottom: 0;
+	text-align: right;
+	width: 95%;
+}
+
+#titre-details{
+	margin: 0 0 10px 0;
+	padding: 0 0 3px 0;
+	text-align: left;
+	color: #555;
+	border-bottom: 2px solid #999;
+}
+
+#details-produit p{
+	text-align: right;
+}
+
+#btn-acheter{
+	position: absolute;
+    right: 15px;
+    text-align: right;
+}
+
+#btn-acheter p{
+	margin: 5px 0 0 0;
+	padding: 0;
+	color: orange;
+	font-style: italic;
+}
+
+#btn-acheter .btn-primary{
+	background-color: #5a4740;
+}
+
+#btn-acheter .btn-primary:hover{
+	background-color: #d3b3d8;
+	color: #5a4740;
+}
+
 /* ==========================================================================
   BREADCRUMB
 ========================================================================== */
@@ -382,6 +472,7 @@ p{
 
 .btn-default:hover{
     background-color: #504f52;
+    color: #fff;
 }
 
 /* ==========================================================================
@@ -570,6 +661,14 @@ p{
     padding: 15px;
 }
 
+.modal-container h2{
+	font-size: 18px;
+	width: 100%;
+	padding-bottom: 10px;
+	margin: 0;
+	border-bottom: 1px solid #999;
+}
+
 .modal-active .modal-container,
 .modal-active  #mask{
     display: block;
@@ -577,6 +676,40 @@ p{
 
 .modal-body{
     padding: 16px 0;
+}
+
+.modal-body h3{
+	margin: 0 0 15px 0;
+    font-size: 15px;
+}
+
+#modal-main{
+	min-height: 255px;
+}
+#modal-image{
+	width: 50%;
+	float: left;
+}
+
+#modal-image-principale{
+	width: 100%;
+}
+
+#modal-description{
+	width: 50%;
+	float: right;
+}
+
+#modal-description-produit{
+	font-size: 12px;	
+}
+
+#modal-details-produit h4{
+    margin: 40px 0 5px 0;
+    padding: 0 0 2px 0;
+    font-size: 12px;
+    font-variant: small-caps;
+    border-bottom: 1px solid #999;
 }
 
 .modal-footer{
