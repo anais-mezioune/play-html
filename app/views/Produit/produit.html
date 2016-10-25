@@ -191,47 +191,8 @@
 							</div>
 							<!--/Slider-->
 						</div>
-						<!-- The Modal -->
-						<div id="zoom-image" class="modal">
-
-							<!-- The Close Button -->
-							<span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
-
-							<!-- Modal Content (The Image) -->
-							<img class="modal-content" id="zoom">
-
-							<!-- Modal Caption (Image Text) -->
-							<div id="caption"></div>
-						</div>
+						
 					</section>
-
-
-
-
-					<!-- <section id="images" class="col-xs-4">
-                		<figure>
-                			<img id="image-principale" src="@{'/public/images/Produits/1/image-principale.jpg'}" />
-                			<figcaption>
-                				<ul class="row" id="miniatures">
-                					<li class="miniature col-xs-4">
-                						<a class="thumbnail" href="#">
-                							<img src="@{'/public/images/Produits/1/image-1.jpg'}" />
-                						</a>
-                					</li>
-                					<li class="miniature col-xs-4">
-                						<a class="thumbnail" href="#">
-                							<img src="@{'/public/images/Produits/1/image-2.jpg'}" />
-                						</a>
-                					</li>
-                					<li class="miniature col-xs-4">
-                						<a class="thumbnail" href="#">
-                							<img src="@{'/public/images/Produits/1/image-4.jpg'}" />
-                						</a>
-                					</li>
-                				</ul>
-                			</figcaption>
-                		</figure>
-                	</section> -->
                 	<section id="description" class="col-xs-8">
                 		<article>
                 			<section id="description-produit">
@@ -250,6 +211,110 @@
                 			</section>
                 		</article>
                 	</section>
+                	<section class="panel panel-primary col-xs-12" id="avis-clients">
+						<section class="panel-heading">
+							<h1 class="panel-title">Avis des consommateurs</h1>
+						</section>
+						<section class="panel-body row">
+							<!-- Dernier Avis -->
+							<section class="col-xs-12" id="dernier-avis">
+								<section class="note-client col-xs-3">
+									<p>4/5 étoiles</p>
+								</section>
+								<section class="avis-client col-xs-9">
+									<p>
+										Livraison rapide. Rapport qualité / prix excellent !
+										Je recommande.
+									</p>
+									<section class="col-xs-12 row">
+										<p class="col-xs-6">Pseudonyme</p>
+										<p class="col-xs-6">jj/mm/aaaa</p>
+									</section>
+								</section>
+							</section>
+							<!-- Liste des avis -->
+							<section class="col-xs-12" id="liste-avis">
+								<section class="col-xs-12">
+									<section class="note-client col-xs-3">
+										<p>4/5 étoiles</p>
+									</section>
+									<section class="avis-client col-xs-9">
+										<p>Livraison rapide. Rapport qualité / prix excellent ! Je
+											recommande.</p>
+										<section class="col-xs-12 row">
+											<p class="col-xs-6">Pseudonyme</p>
+											<p class="col-xs-6">jj/mm/aaaa</p>
+										</section>
+									</section>
+								</section>
+								<section class="col-xs-12">
+									<section class="note-client col-xs-3">
+										<p>4/5 étoiles</p>
+									</section>
+									<section class="avis-client col-xs-9">
+										<p>Livraison rapide. Rapport qualité / prix excellent ! Je
+											recommande.</p>
+										<section class="col-xs-12 row">
+											<p class="col-xs-6">Pseudonyme</p>
+											<p class="col-xs-6">jj/mm/aaaa</p>
+										</section>
+									</section>	
+								</section>
+								<section class="col-xs-12">
+									<section class="note-client col-xs-3">
+										<p>4/5 étoiles</p>
+									</section>
+									<section class="avis-client col-xs-9">
+										<p>Livraison rapide. Rapport qualité / prix excellent ! Je
+											recommande.</p>
+										<section class="col-xs-12 row">
+											<p class="col-xs-6">Pseudonyme</p>
+											<p class="col-xs-6">jj/mm/aaaa</p>
+										</section>
+									</section>	
+								</section>
+								<section class="col-xs-12">
+									<section class="note-client col-xs-3">
+										<p>4/5 étoiles</p>
+									</section>
+									<section class="avis-client col-xs-9">
+										<p>Livraison rapide. Rapport qualité / prix excellent ! Je
+											recommande.</p>
+										<section class="col-xs-12 row">
+											<p class="col-xs-6">Pseudonyme</p>
+											<p class="col-xs-6">jj/mm/aaaa</p>
+										</section>
+									</section>	
+								</section>
+								<section class="col-xs-12">
+									<section class="note-client col-xs-3">
+										<p>4/5 étoiles</p>
+									</section>
+									<section class="avis-client col-xs-9">
+										<p>Livraison rapide. Rapport qualité / prix excellent ! Je
+											recommande.</p>
+										<section class="col-xs-12 row">
+											<p class="col-xs-6">Pseudonyme</p>
+											<p class="col-xs-6">jj/mm/aaaa</p>
+										</section>
+									</section>	
+								</section>
+								<section class="col-xs-12">
+									<section class="note-client col-xs-3">
+										<p>4/5 étoiles</p>
+									</section>
+									<section class="avis-client col-xs-9">
+										<p>Livraison rapide. Rapport qualité / prix excellent ! Je
+											recommande.</p>
+										<section class="col-xs-12 row">
+											<p class="col-xs-6">Pseudonyme</p>
+											<p class="col-xs-6">jj/mm/aaaa</p>
+										</section>
+									</section>	
+								</section>
+							</section>
+						</section>
+					</section>
                 </section>
             </article>
         </div>
@@ -262,6 +327,19 @@
 </footer>
 
 <div id="mask" class="close-modal-link"></div>
+<!-- The Modal -->
+<div class="modal-container">
+	<header>
+		<h2>Jeu de quilles pour enfants</h2>
+	</header>
+	<div class="modal-body">
+		<section class="modal-main" id="zoom-image">
+			<img id="zoom" />
+		</section>
+		<div class="modal-content"></div>
+	</div>
+	<footer class="modal-footer">@Antre Manuel'Art</footer>
+</div>
 <div class="modal-container">
     <header>
         <h2>Produit(s) ajouté(s) au panier</h2>

@@ -49,22 +49,39 @@ var debounce = function (func, threshold, execAsap) {
         }).trigger('resize');
         
         /* ==========================================================================
-        CAROUSEL
+        CAROUSEL PRODUIT
         ========================================================================== */
         
         $('#carousel-produit').carousel({
         	interval: 5000
         });
         
-        //Handles the carousel thumbnails
-        $('[id^=carousel-selector-]').click(function () {
-        	var id_selector = $(this).attr("id");
+      //Handles the carousel main image
+        $('#carousel-produit').click(function () {
+        	var img_active = $(this).children().find(".active").find("img");
+        	var src_image = img_active.attr("src");
+        	var alt_image = img_active.attr("alt");
         	var modal = document.getElementById('zoom-image');
-        	var img = $(this);
         	var modalImg = document.getElementById("zoom");
         	var captionText = document.getElementById("caption");
         	
+        	modal.style.display = "block";
+            modalImg.src = src_image;
+            captionText.innerHTML = alt_image;
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() { 
+              modal.style.display = "none";
+            }
+        });
+        
+        //Handles the carousel thumbnails
+        $('[id^=carousel-selector-]').click(function () {
+        	var id_selector = $(this).attr("id");
+        	
         	$(this).parent().addClass("hide").siblings().removeClass('hide');
+        	
         	try {
         		var id = /-(\d+)$/.exec(id_selector)[1];
         		console.log(id_selector, id);
@@ -72,18 +89,8 @@ var debounce = function (func, threshold, execAsap) {
         	} catch (e) {
         		console.log('Regex failed!', e);
         	}
-        	
-        	modal.style.display = "block";
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() { 
-              modal.style.display = "none";
-            }
-        	
         });
+        
         // When the carousel slides, auto update the text
         $('#carousel-produit').on('slid.bs.carousel', function (e) {
         	var id = $('.item.active').data('slide-number');
@@ -114,7 +121,10 @@ var debounce = function (func, threshold, execAsap) {
             // Gestion de l'affichage des modales
         }).on('click', '.modal-trigger', function (event) {
             $body.addClass('modal-active');
-
+        
+        }).on('click', '.carousel-inner', function (event) {
+            $body.addClass('modal-active');    
+        
         }).on('click', '.close-modal-link', function(event){
             $body.removeClass('modal-active');
             $('.modal-content').html("");

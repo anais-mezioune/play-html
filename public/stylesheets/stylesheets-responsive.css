@@ -337,6 +337,60 @@ p{
     border-color: #776055;
 }
 
+#avis-clients{
+    padding: 0;
+    margin: 15px;
+    width: auto;
+}
+
+#avis-clients .panel-heading{
+    background-color: #776055;
+}
+
+#avis-clients .panel-body{
+    padding: 0;
+}
+
+.note-client{
+	color: green;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+}
+
+.avis-client{
+	text-align: justify;
+    font-size: 12px;
+}
+
+.avis-client .col-xs-6{
+	text-align: center;
+	font-weight: bold;
+	font-style: oblique;
+	font-size: 11px;
+}
+
+.avis-client .col-xs-6:first-child{
+	border-right: 1px solid #999;
+}
+
+.avis-client .col-xs-12{
+	margin-top: 10px;
+}
+
+#dernier-avis{
+	margin: 10px 0;
+}
+
+#liste-avis{
+	margin: 5px 0 0 0;
+}
+
+#liste-avis>section{
+	border-top: 1px solid #999;
+	padding: 10px 0;
+}
+
 #images{
 	height: 100%;
 }
@@ -356,6 +410,14 @@ p{
     list-style:none;
     margin-left: -40px;
     margin-top:20px;
+}
+
+.carousel-inner{
+	height: 370px;
+}
+
+.carousel-inner>.active{
+	height: 100%;
 }
 
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
