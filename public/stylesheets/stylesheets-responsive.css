@@ -1,6 +1,11 @@
 /* ==========================================================================
   GLOBAL
 ========================================================================== */
+@font-face 
+{
+	font-family: "glyphicons-halflings-regular";
+	src: url("../fonts/glyphicons-halflings-regular.ttf");
+}
 
 *{
     box-sizing: border-box;
@@ -54,6 +59,7 @@ body{
     max-width: 960px;
     margin: 0 auto;
     padding: 0 16px;
+    font-size: 15px;
 }
 
 a{
@@ -108,21 +114,44 @@ p{
 ========================================================================== */
 
 #header{
-    height: auto;
-    background-color: #1269b0;
-    padding: 3px 16px;
+    max-height: 60px;
+    background-color: #4b3c35;
+    padding: 4px 16px;
+    border-bottom: 5px solid #ba8cc0;
 }
 
 #logo{
     float: left;
     height: auto;
-    margin-left: 3%;
+    margin-left: 5%;
+    display: block;
+    font-size: 1.8em;
+    color: #d7bddb;
+    font-weight: bold;
+    font-family: monospace;
+    font-style: oblique;
+    line-height: 2.5em;
+}
+
+@media all and (min-width: 992px){
+	#logo{
+	  	float: left;
+	    height: auto;
+	    margin-left: 5%;
+	    display: block;
+	    font-size: 30px;
+	    color: #d7bddb;
+	    font-weight: bold;
+	    font-family: monospace;
+	    font-style: oblique;
+	    line-height: 1.6em;
+	}
 }
 
 #main-nav{
-    position: absolute;
+    /*position: absolute;
     top: 50px;
-    left: 0;
+    left: 0;*/
     -webkit-box-shadow: 0px 3px 10px 1px rgba(0,0,0,0.42);
     box-shadow: 0px 3px 10px 1px rgba(0,0,0,0.42);
 }
@@ -133,9 +162,9 @@ p{
     }
     #main-nav{
         float: right;
-        top: 66px;
+        margin-top: 3px;
         position: relative;
-        margin-right: 3%;
+        padding-right: 10%;
         text-align: right;
         font-size: 18px;
         box-shadow: none;
@@ -149,13 +178,13 @@ p{
     padding: 1em;
     width: 100%;
     border-bottom: 1px solid #f2f2f2;
-    background-color: #fff;
+    background-color: #000;
 }
 
 .main-nav-item.active .main-nav-link,
 .main-nav-link:hover{
     background-color: #1269b0;
-    color : #fff;
+    color : #ebdeed;
 }
 
 @media all and (min-width: 992px){
@@ -166,11 +195,11 @@ p{
         height: 36px;
         width: auto;
         background-color: transparent;
-        color: #fff;
+        color: #ebdeed;
     }
     .main-nav-item.active .main-nav-link,
     .main-nav-link:hover{
-        border-bottom-color: #fff;
+        border-bottom-color: #ebdeed;
         background-color: transparent;
     }
 }
@@ -182,12 +211,14 @@ p{
 .company-logo{
     width: 120px;
     height: 44px;
+    display: none;
 }
 
 @media all and (min-width: 992px){
     .company-logo{
-        width: 100%;
+    	width: 100%;
     	height: auto;
+    	display: none;
     }
 }
 
@@ -296,10 +327,14 @@ p{
     flex: 1;
 }
 
+.panel-primary {
+    border-color: #776055;
+}
+
 .panel-primary > .panel-heading{
 	color: #fff;
-    background-color: #c1ab93;
-    border-color: #c1ab93;	
+    background-color: #776055;
+    border-color: #776055;
 }
 
 #images{
@@ -313,6 +348,18 @@ p{
 
 #miniatures{
 	list-style-type: none;
+	margin: 0;
+    padding: 0;
+}
+
+.hide-bullets {
+    list-style:none;
+    margin-left: -40px;
+    margin-top:20px;
+}
+
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+    width: 100%;
 }
 
 #description{
@@ -325,6 +372,7 @@ p{
 
 #description-produit{
 	width: 100%;
+	font-size: 13px;
 }
 
 #titre-produit{
@@ -334,7 +382,6 @@ p{
 
 #description-produit p{
 	margin: 0 0 10px 0;
-	font-size: 13px;
 }
 
 #details-produit{
@@ -342,14 +389,17 @@ p{
 	bottom: 0;
 	text-align: right;
 	width: 95%;
+	font-size: 11px;
 }
 
 #titre-details{
-	margin: 0 0 10px 0;
-	padding: 0 0 3px 0;
-	text-align: left;
-	color: #555;
-	border-bottom: 2px solid #999;
+  	margin: 0 0 10px 0;
+    padding: 0 0 3px 0;
+    text-align: left;
+    color: #555;
+    font-size: 15px;
+    border-bottom: 2px solid #999;
+    font-variant: small-caps;
 }
 
 #details-produit p{
@@ -364,18 +414,29 @@ p{
 
 #btn-acheter p{
 	margin: 5px 0 0 0;
-	padding: 0;
+    padding: 0;
+}
+
+#prix-produit{
+    color: #7d4884;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#quantite-produit{
 	color: orange;
 	font-style: italic;
 }
 
 #btn-acheter .btn-primary{
-	background-color: #5a4740;
+	background-color: #d3b3d8;
+    box-shadow: 2px 2px 0px 1px #4b3c35;
 }
 
 #btn-acheter .btn-primary:hover{
-	background-color: #d3b3d8;
-	color: #5a4740;
+	background-color: #4b3c35;
+    color: #fff;
+    box-shadow: 2px 2px 0px 1px #d3b3d8;
 }
 
 /* ==========================================================================
@@ -383,11 +444,19 @@ p{
 ========================================================================== */
 
 #breadcrumb{
-    padding: 16px 0;
+    margin: 15px 0 5px 0;
+}
+
+#breadcrumb-list li:last-child{
+	font-weight: bold;
 }
 
 .breadcrumb-item{
     display: inline-block;
+}
+
+.breadcrumb-item a{
+    color: #57463e;
 }
 
 .breadcrumb-item .icon-arrow-left{
@@ -636,6 +705,8 @@ p{
 @media all and (min-width: 992px) {
     #footer{
         text-align: left;
+        border-top: 3px solid #4b3c35;
+        background: #ba8cc0;
     }
 }
 

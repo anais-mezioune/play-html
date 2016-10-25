@@ -23,4 +23,16 @@ public class Application extends Controller {
         render();
     }
 
+    public static void presentationResponsive(){
+        render();
+    }
+    
+    public static void getAsyncPresentationMessage(String name, String signature){
+        String videoCode = "1NKWop13q7I";
+        renderTemplate("tags/presentation-message.html", name, signature);
+    }
+
+    public static void test(){
+        render();
+    }
 }

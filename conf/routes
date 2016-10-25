@@ -18,7 +18,10 @@ POST    /product/create                         Produits.save
 
 # Home page
 GET     /                                       Application.index
+GET     /test                                   Application.test
 GET     /presentation/?                         Application.presentation
+GET     /presentation-responsive/?              Application.presentationResponsive
+POST    /presentation/async-message             Application.getAsyncPresentationMessage
 GET     /product/{id}                           Application.produit
 
 # Client

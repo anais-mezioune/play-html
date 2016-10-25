@@ -69,14 +69,15 @@
     <meta name="msapplication-square150x150logo" content="@{'/public/images/ms-icons-150x150.png'}" />
     <meta name="msapplication-square310x310logo" content="@{'/public/images/ms-icons-310x310.png'}" />
 </head>
-<body>
+<body background="@{'/public/images/body.jpg'}">
 <!--[if lt IE 9]>
 <script src="//html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript" charset="utf-8"></script>
 <script src="lib/css-mediaqueries/css3-mediaqueries.js" type="text/javascript" charset="utf-8"></script>
 <![endif]-->
 
 <header id="header" class="clearfix row" role="banner">
-    <a class="col-xs-3" id="logo" href="@{Application.index()}" title="Antre Manuel'Art">
+    <a class="col-xs-4" id="logo" href="@{Application.index()}" title="Antre Manuel'Art">
+    	Antre Manuel'Art
         <img class="img company-logo" alt="Antre Manuel'Art" src="@{'/public/images/logo.jpg'}" />
     </a>
     <button id="menu-btn" class="nav-btn">
@@ -84,7 +85,7 @@
         <span class="bar"></span>
         <span class="bar"></span>
     </button>
-    <nav class="col-xs-8" id="main-nav">
+    <nav class="col-xs-6" id="main-nav">
         <ul id="main-nav-list" class="list-unstyled">
             <li class="main-nav-item"><a class="main-nav-link" href="#" title="Home page">Home</a></li>
             <li class="main-nav-item active"><a class="main-nav-link" href="#" title="About us">About us</a></li>
@@ -125,6 +126,89 @@
                 </section>
                 <section class="panel-body row">
                 	<section id="images" class="col-xs-4">
+						<!-- Slider -->
+						<div class="row">
+							<div>
+								<div class="col-xs-12" id="slider">
+									<!-- Top part of the slider -->
+									<div class="row">
+										<div class="col-sm-12" id="carousel-bounding-box">
+											<div class="carousel slide" id="carousel-produit">
+												<!-- Carousel items -->
+												<div class="carousel-inner">
+													<div class="active item" data-slide-number="0">
+														<img
+															src="@{'/public/images/Produits/1/image-principale.jpg'}">
+													</div>
+
+													<div class="item" data-slide-number="1">
+														<img src="@{'/public/images/Produits/1/image-1.jpg'}">
+													</div>
+
+													<div class="item" data-slide-number="2">
+														<img src="@{'/public/images/Produits/1/image-2.jpg'}">
+													</div>
+
+													<div class="item" data-slide-number="3">
+														<img src="@{'/public/images/Produits/1/image-4.jpg'}">
+													</div>
+												</div>
+												<!-- Carousel nav -->
+												<a class="left carousel-control" href="#carousel-produit"
+													role="button" data-slide="prev"> <span
+													class="glyphicon glyphicon-chevron-left"></span>
+												</a> <a class="right carousel-control" href="#carousel-produit"
+													role="button" data-slide="next"> <span
+													class="glyphicon glyphicon-chevron-right"></span>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="slider-thumbs">
+								<!-- Bottom switcher of slider -->
+								<ul class="hide-bullets">
+									<li class="col-sm-3"><a class="thumbnail"
+										id="carousel-selector-0"> <img
+											src="@{'/public/images/Produits/1/image-principale.jpg'}">
+									</a></li>
+
+									<li class="col-sm-3"><a class="thumbnail"
+										id="carousel-selector-1"> <img
+											src="@{'/public/images/Produits/1/image-1.jpg'}">
+									</a></li>
+
+									<li class="col-sm-3"><a class="thumbnail"
+										id="carousel-selector-2"> <img
+											src="@{'/public/images/Produits/1/image-2.jpg'}">
+									</a></li>
+									<li class="col-sm-3"><a class="thumbnail"
+										id="carousel-selector-3"> <img
+											src="@{'/public/images/Produits/1/image-4.jpg'}">
+									</a></li>
+								</ul>
+							</div>
+							<!--/Slider-->
+						</div>
+						<!-- The Modal -->
+						<div id="zoom-image" class="modal">
+
+							<!-- The Close Button -->
+							<span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+							<!-- Modal Content (The Image) -->
+							<img class="modal-content" id="zoom">
+
+							<!-- Modal Caption (Image Text) -->
+							<div id="caption"></div>
+						</div>
+					</section>
+
+
+
+
+					<!-- <section id="images" class="col-xs-4">
                 		<figure>
                 			<img id="image-principale" src="@{'/public/images/Produits/1/image-principale.jpg'}" />
                 			<figcaption>
@@ -147,17 +231,16 @@
                 				</ul>
                 			</figcaption>
                 		</figure>
-                		
-                		
-                	</section>
+                	</section> -->
                 	<section id="description" class="col-xs-8">
                 		<article>
                 			<section id="description-produit">
                 				<h2 id="titre-produit">Jeu de quilles pour enfants</h2>
 	                			<p>Jeu de six quilles et sa balle en tissus pour enfant en bas âge.</p>
 	                			<section id="btn-acheter">
+	                				<p id="prix-produit">25.00€ TTC</p>
 	                				<a href="#" class="btn btn-primary modal-trigger">Acheter</a>
-	                				<p>Plus que 1 exemplaire en stock !</p>
+	                				<p id="quantite-produit">Plus que 1 exemplaire en stock !</p>
 	                			</section>
                 			</section>
                 			<section id="details-produit">

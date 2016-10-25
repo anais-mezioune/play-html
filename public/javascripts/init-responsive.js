@@ -40,14 +40,56 @@ var debounce = function (func, threshold, execAsap) {
 
         // Gestion du changement de résolution
         $window.smartresize(function(){
-            resetFocusArticle();
-            if($window.width() > RESOLUTION_DESKTOP){
-                resetMainNav();
-                resetContentVisual();
-                resetAccordion();
-            }
+        	resetFocusArticle();
+        	if($window.width() > RESOLUTION_DESKTOP){
+        		resetMainNav();
+        		resetContentVisual();
+        		resetAccordion();
+        	}
         }).trigger('resize');
-
+        
+        /* ==========================================================================
+        CAROUSEL
+        ========================================================================== */
+        
+        $('#carousel-produit').carousel({
+        	interval: 5000
+        });
+        
+        //Handles the carousel thumbnails
+        $('[id^=carousel-selector-]').click(function () {
+        	var id_selector = $(this).attr("id");
+        	var modal = document.getElementById('zoom-image');
+        	var img = $(this);
+        	var modalImg = document.getElementById("zoom");
+        	var captionText = document.getElementById("caption");
+        	
+        	$(this).parent().addClass("hide").siblings().removeClass('hide');
+        	try {
+        		var id = /-(\d+)$/.exec(id_selector)[1];
+        		console.log(id_selector, id);
+        		jQuery('#carousel-produit').carousel(parseInt(id));
+        	} catch (e) {
+        		console.log('Regex failed!', e);
+        	}
+        	
+        	modal.style.display = "block";
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() { 
+              modal.style.display = "none";
+            }
+        	
+        });
+        // When the carousel slides, auto update the text
+        $('#carousel-produit').on('slid.bs.carousel', function (e) {
+        	var id = $('.item.active').data('slide-number');
+        	$('#carousel-text').html($('#slide-content-'+id).html());
+        });
+        
         /* ==========================================================================
          EVENTS
          ========================================================================== */
