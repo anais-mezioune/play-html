@@ -76,7 +76,7 @@
 <![endif]-->
 
 <header id="header" class="clearfix row" role="banner">
-    <a class="col-xs-4" id="logo" href="@{Application.index()}" title="Antre Manuel'Art">
+    <a class="col-xs-34" id="logo" href="@{Application.index()}" title="Antre Manuel'Art">
     	Antre Manuel'Art
         <img class="img company-logo" alt="Antre Manuel'Art" src="@{'/public/images/logo.jpg'}" />
     </a>
@@ -85,13 +85,17 @@
         <span class="bar"></span>
         <span class="bar"></span>
     </button>
-    <nav class="col-xs-6" id="main-nav">
+    <nav class="col-xs-4" id="main-nav">
         <ul id="main-nav-list" class="list-unstyled">
             <li class="main-nav-item"><a class="main-nav-link" href="#" title="Home page">Home</a></li>
             <li class="main-nav-item active"><a class="main-nav-link" href="#" title="About us">About us</a></li>
             <li class="main-nav-item"><a class="main-nav-link" href="#" title="Contacts">Contacts</a></li>
         </ul>
     </nav>
+    <section class="col-xs-3 col-xs-12 row" id="bloc-connexion">
+    	<p class="col-xs-6">user@gmail.com</p>
+    	<a class="col-xs-6" href="#">Se déconnecter</a>
+    </section>
 </header>
 <div id="page-content" itemscope itemtype="http://schema.org/WebPage">
     <nav id="breadcrumb">
@@ -122,7 +126,7 @@
         <div class="container">
 			<article class="panel panel-primary">
                 <section class="panel-heading">
-                	<h1 class="panel-title">Jeu de quilles pour enfants</h1>
+                	<h2 class="panel-title">Jeu de quilles pour enfants</h2>
                 </section>
                 <section class="panel-body row">
                 	<section id="images" class="col-xs-4">
@@ -137,8 +141,7 @@
 												<!-- Carousel items -->
 												<div class="carousel-inner">
 													<div class="active item" data-slide-number="0">
-														<img
-															src="@{'/public/images/Produits/1/image-principale.jpg'}">
+														<img src="@{'/public/images/Produits/1/image-principale.jpg'}">
 													</div>
 
 													<div class="item" data-slide-number="1">
@@ -196,7 +199,7 @@
                 	<section id="description" class="col-xs-8">
                 		<article>
                 			<section id="description-produit">
-                				<h2 id="titre-produit">Jeu de quilles pour enfants</h2>
+                				<h1 id="titre-produit">Jeu de quilles pour enfants</h1>
 	                			<p>Jeu de six quilles et sa balle en tissus pour enfant en bas âge.</p>
 	                			<section id="btn-acheter">
 	                				<p id="prix-produit">25.00€ TTC</p>
@@ -328,7 +331,7 @@
 
 <div id="mask" class="close-modal-link"></div>
 <!-- The Modal -->
-<div class="modal-container">
+<div class="modal-container-zoom">
 	<header>
 		<h2>Jeu de quilles pour enfants</h2>
 	</header>
@@ -348,7 +351,7 @@
         <section>
         	<h3>Jeu de quilles pour enfants</h3>
         </section>
-        <section id="modal-main">
+        <section class="modal-main">
         	<section id="modal-image">
         		<figure>
         			<img id="modal-image-principale" src="@{'/public/images/Produits/1/image-principale.jpg'}" />

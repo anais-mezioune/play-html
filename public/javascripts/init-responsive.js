@@ -56,8 +56,8 @@ var debounce = function (func, threshold, execAsap) {
         	interval: 5000
         });
         
-      //Handles the carousel main image
-        $('#carousel-produit').click(function () {
+      //Zoom the carousel main image
+		$('#carousel-produit').click(function () {
         	var img_active = $(this).children().find(".active").find("img");
         	var src_image = img_active.attr("src");
         	var alt_image = img_active.attr("alt");
@@ -68,34 +68,14 @@ var debounce = function (func, threshold, execAsap) {
         	modal.style.display = "block";
             modalImg.src = src_image;
             captionText.innerHTML = alt_image;
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
-            // When the user clicks on <span> (x), close the modal
-            span.onclick = function() { 
-              modal.style.display = "none";
-            }
         });
         
         //Handles the carousel thumbnails
-        $('[id^=carousel-selector-]').click(function () {
-        	var id_selector = $(this).attr("id");
-        	
+        $('.thumbnail').click(function () {
         	$(this).parent().addClass("hide").siblings().removeClass('hide');
-        	
-        	try {
-        		var id = /-(\d+)$/.exec(id_selector)[1];
-        		console.log(id_selector, id);
-        		jQuery('#carousel-produit').carousel(parseInt(id));
-        	} catch (e) {
-        		console.log('Regex failed!', e);
-        	}
+        	jQuery('#carousel-produit').carousel($(this).parent().index());
         });
         
-        // When the carousel slides, auto update the text
-        $('#carousel-produit').on('slid.bs.carousel', function (e) {
-        	var id = $('.item.active').data('slide-number');
-        	$('#carousel-text').html($('#slide-content-'+id).html());
-        });
         
         /* ==========================================================================
          EVENTS
@@ -123,12 +103,15 @@ var debounce = function (func, threshold, execAsap) {
             $body.addClass('modal-active');
         
         }).on('click', '.carousel-inner', function (event) {
-            $body.addClass('modal-active');    
-        
+            $body.addClass('modal-active-zoom');    
+            $(".modal-container-zoom").css("display", "block");
+            
         }).on('click', '.close-modal-link', function(event){
             $body.removeClass('modal-active');
+            $body.removeClass('modal-active-zoom');
             $('.modal-content').html("");
             $('.error').hide();
+            $(".modal-container-zoom").css("display", "none");
             signature.clear();
 
             // Gestion du rappatriement du contenu AJAX

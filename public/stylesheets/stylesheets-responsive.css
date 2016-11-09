@@ -161,13 +161,13 @@ p{
         display: inline-block;
     }
     #main-nav{
-        float: right;
-        margin-top: 3px;
-        position: relative;
-        padding-right: 10%;
-        text-align: right;
-        font-size: 18px;
-        box-shadow: none;
+        float: left;
+	    margin-top: 20px;
+	    position: relative;
+	    padding-left: 50px;
+	    text-align: left;
+	    font-size: 15px;
+	    box-shadow: none;
     }
 }
 
@@ -189,7 +189,7 @@ p{
 
 @media all and (min-width: 992px){
     .main-nav-link{
-        border-bottom: 3px solid transparent;
+        border-bottom: 5px solid transparent;
         margin-right: 1em;
         padding: 0;
         height: 36px;
@@ -255,6 +255,24 @@ p{
     animation-name: openedSecondBar;
     opacity: .5;
     height: 0;
+}
+
+#bloc-connexion{
+	line-height: 50px;
+}
+
+#bloc-connexion a,
+#bloc-connexion p{
+	color: white;	
+}
+
+#bloc-connexion p{
+	text-align: right;
+	border-right: 1px solid white;	
+}
+
+#bloc-connexion a{
+	text-align: left;
 }
 
 @keyframes openedFirstBar {
@@ -422,6 +440,17 @@ p{
 
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
     width: 100%;
+}
+
+.carousel-control .glyphicon-chevron-left, 
+.carousel-control .glyphicon-chevron-right, 
+.carousel-control .icon-prev, 
+.carousel-control .icon-next{
+	font-size: 18px;
+}
+
+#zoom{
+	width: 100%;	
 }
 
 #description{
@@ -777,11 +806,14 @@ p{
 ========================================================================== */
 
 
-.modal-container, #mask{
+.modal-container,
+.modal-container-zoom,
+#mask{
     display: none;
 }
 
-.modal-container{
+.modal-container,
+.modal-container-zoom{
     position: absolute;
     top: 50px;
     width: 100%;
@@ -794,7 +826,8 @@ p{
     padding: 15px;
 }
 
-.modal-container h2{
+.modal-container h2,
+.modal-container-zoom h2{
 	font-size: 18px;
 	width: 100%;
 	padding-bottom: 10px;
@@ -803,7 +836,9 @@ p{
 }
 
 .modal-active .modal-container,
-.modal-active  #mask{
+.modal-active-zomm .modal-container-zoom,
+.modal-active  #mask,
+.modal-active-zoom  #mask{
     display: block;
 }
 
